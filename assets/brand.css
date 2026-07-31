@@ -45,6 +45,7 @@
 
 .esebills-checkout {
   font-family: var(--font-sans);
+  width: 100%;
   max-width: 480px;
   margin: 2rem 0;
   border: 1px solid var(--color-gray-200);
@@ -54,6 +55,7 @@
   box-shadow:
     0 1px 3px rgba(0, 0, 0, 0.06),
     0 1px 2px rgba(0, 0, 0, 0.04);
+  box-sizing: border-box;
 }
 
 /* ----------------------------------------------------------------
@@ -275,9 +277,16 @@
   box-sizing: border-box;
 }
 
+.esebills-catalog *,
+.esebills-catalog *::before,
+.esebills-catalog *::after {
+  box-sizing: border-box;
+}
+
 /* Category Section */
 
 .esebills-category {
+  min-width: 0;
   margin-bottom: 2rem;
 }
 
@@ -322,7 +331,8 @@
 
 .esebills-category-items {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+  align-items: stretch;
   gap: 1rem;
   padding: 1rem;
   background: var(--color-gray-50);
@@ -349,13 +359,22 @@
     border-color 0.12s ease,
     box-shadow 0.12s ease,
     transform 0.12s ease;
+  color: inherit;
 }
 
-.esebills-product-card:hover {
+.esebills-product-card:hover,
+.esebills-product-card:focus-visible {
   background: var(--color-white);
   border-color: var(--color-brand-500);
   box-shadow: 0 8px 24px rgba(0, 138, 89, 0.12);
   transform: translateY(-2px);
+  color: inherit;
+  text-decoration: none;
+}
+
+.esebills-product-card:focus-visible {
+  outline: 3px solid rgba(0, 161, 103, 0.25);
+  outline-offset: 2px;
 }
 
 .esebills-product-card-body h4 {
@@ -377,7 +396,8 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: 0.5rem;
+  gap: 1rem;
+  margin-top: 1rem;
 }
 
 .esebills-product-price {
@@ -403,12 +423,6 @@
  * Responsive Catalog
  * ---------------------------------------------------------------- */
 
-@media (max-width: 900px) {
-  .esebills-category-items {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-
 @media (max-width: 600px) {
   .esebills-catalog {
     margin: 1.5rem auto;
@@ -428,5 +442,9 @@
   .esebills-product-card {
     min-height: auto;
     padding: 1rem;
+  }
+
+  .esebills-product-card-footer {
+    gap: 0.75rem;
   }
 }
