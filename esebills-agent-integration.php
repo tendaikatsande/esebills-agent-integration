@@ -233,7 +233,14 @@ function esebills_checkout_shortcode($atts) {
                         $output .= '<blockquote class="esebills-fulfilment">' . esc_html($result['fulfilment']['message']) . '</blockquote>';
                     }
                 } elseif (!empty($result['redirectUrl'])) {
-                    wp_safe_redirect(esc_url_raw($result['redirectUrl']));
+                    $redirect_url = esc_url_raw($result['redirectUrl']);
+                    add_filter('allowed_redirect_hosts', function($hosts) {
+                        $hosts[] = 'pesepay.co.zw';
+                        $hosts[] = 'www.pesepay.co.zw';
+                        $hosts[] = 'pay.pesepay.co.zw';
+                        return array_unique($hosts);
+                    });
+                    wp_safe_redirect($redirect_url);
                     exit;
                 } else {
                     $output .= '<div class="esebills-notice esebills-warning"><p>' . esc_html__('Transaction submitted, status: ', 'esebills-agent-integration') . esc_html($result['status']) . '</p></div>';
