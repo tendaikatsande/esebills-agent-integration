@@ -4,7 +4,7 @@
  * Fonts: Manrope (sans), Bricolage Grotesque (display), Space Mono (mono)
  * ---------------------------------------------------------------- */
 
-@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&family=Manrope:wght@400;500;600;700&family=Space+Mono&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&family=Manrope:wght@400;500;600;700&family=Space+Mono&display=swap");
 
 :root {
   --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
@@ -51,7 +51,9 @@
   border-radius: 12px;
   overflow: hidden;
   background: var(--color-white);
-  box-shadow: 0 1px 3px rgba(0,0,0,.06), 0 1px 2px rgba(0,0,0,.04);
+  box-shadow:
+    0 1px 3px rgba(0, 0, 0, 0.06),
+    0 1px 2px rgba(0, 0, 0, 0.04);
 }
 
 /* ----------------------------------------------------------------
@@ -59,7 +61,11 @@
  * ---------------------------------------------------------------- */
 
 .esebills-checkout-header {
-  background: linear-gradient(135deg, var(--color-brand-600), var(--color-brand-700));
+  background: linear-gradient(
+    135deg,
+    var(--color-brand-600),
+    var(--color-brand-700)
+  );
   color: var(--color-white);
   padding: 1.5rem;
 }
@@ -68,14 +74,14 @@
   font-family: var(--font-display);
   font-size: 1.35rem;
   font-weight: 700;
-  margin: 0 0 .25rem;
+  margin: 0 0 0.25rem;
   color: var(--color-white);
 }
 
 .esebills-checkout-header p {
-  font-size: .9rem;
+  font-size: 0.9rem;
   margin: 0;
-  opacity: .85;
+  opacity: 0.85;
   color: var(--color-white);
 }
 
@@ -85,9 +91,9 @@
 
 .esebills-notice {
   margin: 1rem 1rem 0;
-  padding: .75rem 1rem;
+  padding: 0.75rem 1rem;
   border-radius: 8px;
-  font-size: .9rem;
+  font-size: 0.9rem;
   border-left: 4px solid;
 }
 
@@ -114,13 +120,13 @@
 }
 
 .esebills-fulfilment {
-  margin: .5rem 1rem 1rem;
-  padding: .75rem 1rem;
+  margin: 0.5rem 1rem 1rem;
+  padding: 0.75rem 1rem;
   background: var(--color-brand-50);
   border-left: 4px solid var(--color-brand-400);
   border-radius: 0 8px 8px 0;
   font-family: var(--font-mono);
-  font-size: .875rem;
+  font-size: 0.875rem;
   color: var(--color-brand-800);
 }
 
@@ -139,23 +145,25 @@
 .esebills-field label {
   display: block;
   font-weight: 600;
-  font-size: .875rem;
+  font-size: 0.875rem;
   color: var(--color-gray-700);
-  margin-bottom: .35rem;
+  margin-bottom: 0.35rem;
 }
 
 .esebills-field input,
 .esebills-field select,
 .esebills-field textarea {
   width: 100%;
-  padding: .6rem .75rem;
+  padding: 0.6rem 0.75rem;
   border: 1px solid var(--color-gray-300);
   border-radius: 8px;
   font-family: var(--font-sans);
-  font-size: .95rem;
+  font-size: 0.95rem;
   color: var(--color-ink);
   background: var(--color-white);
-  transition: border-color .15s ease, box-shadow .15s ease;
+  transition:
+    border-color 0.15s ease,
+    box-shadow 0.15s ease;
   box-sizing: border-box;
 }
 
@@ -163,7 +171,7 @@
 .esebills-field select:focus {
   outline: none;
   border-color: var(--color-brand-500);
-  box-shadow: 0 0 0 3px rgba(0,161,103,.15);
+  box-shadow: 0 0 0 3px rgba(0, 161, 103, 0.15);
 }
 
 .esebills-field input::placeholder {
@@ -172,9 +180,9 @@
 
 .esebills-hint {
   display: block;
-  font-size: .8rem;
+  font-size: 0.8rem;
   color: var(--color-gray-500);
-  margin-top: .25rem;
+  margin-top: 0.25rem;
 }
 
 .esebills-required {
@@ -189,9 +197,9 @@
   background: var(--color-brand-50);
   border: 1px solid var(--color-brand-200);
   border-radius: 8px;
-  padding: .75rem 1rem;
+  padding: 0.75rem 1rem;
   margin-bottom: 1.25rem;
-  font-size: .85rem;
+  font-size: 0.85rem;
   color: var(--color-brand-800);
 }
 
@@ -210,24 +218,30 @@
 .esebills-btn {
   display: inline-block;
   width: 100%;
-  padding: .75rem 1.5rem;
+  padding: 0.75rem 1.5rem;
   font-family: var(--font-display);
   font-size: 1rem;
   font-weight: 700;
   color: var(--color-white);
-  background: linear-gradient(135deg, var(--color-brand-500), var(--color-brand-600));
+  background: linear-gradient(
+    135deg,
+    var(--color-brand-500),
+    var(--color-brand-600)
+  );
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  transition: opacity .15s ease, transform .1s ease;
+  transition:
+    opacity 0.15s ease,
+    transform 0.1s ease;
 }
 
 .esebills-btn:hover {
-  opacity: .9;
+  opacity: 0.9;
 }
 
 .esebills-btn:active {
-  transform: scale(.98);
+  transform: scale(0.98);
 }
 
 /* ----------------------------------------------------------------
@@ -240,7 +254,7 @@
   color: var(--color-brand-600);
   text-decoration: none;
   font-weight: 600;
-  font-size: .9rem;
+  font-size: 0.9rem;
 }
 
 .esebills-back-link:hover {
@@ -270,9 +284,13 @@
 .esebills-category-header {
   display: flex;
   align-items: center;
-  gap: .75rem;
-  padding: .75rem 1rem;
-  background: linear-gradient(135deg, var(--color-brand-600), var(--color-brand-700));
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  background: linear-gradient(
+    135deg,
+    var(--color-brand-600),
+    var(--color-brand-700)
+  );
   border-radius: 10px 10px 0 0;
 }
 
@@ -283,7 +301,7 @@
   margin: 0;
   color: var(--color-white);
   text-transform: uppercase;
-  letter-spacing: .03em;
+  letter-spacing: 0.03em;
 }
 
 .esebills-category-count {
@@ -292,10 +310,10 @@
   justify-content: center;
   min-width: 1.6rem;
   height: 1.6rem;
-  padding: 0 .35rem;
-  background: rgba(255,255,255,.2);
+  padding: 0 0.35rem;
+  background: rgba(255, 255, 255, 0.2);
   border-radius: 999px;
-  font-size: .75rem;
+  font-size: 0.75rem;
   font-weight: 700;
   color: var(--color-white);
 }
@@ -324,15 +342,19 @@
   padding: 1.25rem;
   border: 1px solid var(--color-gray-200);
   border-radius: 10px;
-  box-shadow: 0 4px 14px rgba(0,0,0,.05);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
   box-sizing: border-box;
-  transition: background .12s ease, border-color .12s ease, box-shadow .12s ease, transform .12s ease;
+  transition:
+    background 0.12s ease,
+    border-color 0.12s ease,
+    box-shadow 0.12s ease,
+    transform 0.12s ease;
 }
 
 .esebills-product-card:hover {
   background: var(--color-white);
   border-color: var(--color-brand-500);
-  box-shadow: 0 8px 24px rgba(0,138,89,.12);
+  box-shadow: 0 8px 24px rgba(0, 138, 89, 0.12);
   transform: translateY(-2px);
 }
 
@@ -340,12 +362,12 @@
   font-family: var(--font-display);
   font-size: 1rem;
   font-weight: 600;
-  margin: 0 0 .2rem;
+  margin: 0 0 0.2rem;
   color: var(--color-ink);
 }
 
 .esebills-product-card-body p {
-  font-size: .85rem;
+  font-size: 0.85rem;
   margin: 0;
   color: var(--color-gray-500);
   line-height: 1.4;
@@ -355,22 +377,22 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: .5rem;
+  margin-top: 0.5rem;
 }
 
 .esebills-product-price {
   font-family: var(--font-mono);
-  font-size: .85rem;
+  font-size: 0.85rem;
   font-weight: 600;
   color: var(--color-brand-700);
 }
 
 .esebills-product-select {
   font-family: var(--font-display);
-  font-size: .85rem;
+  font-size: 0.85rem;
   font-weight: 700;
   color: var(--color-brand-500);
-  transition: color .12s ease;
+  transition: color 0.12s ease;
 }
 
 .esebills-product-card:hover .esebills-product-select {
@@ -390,7 +412,7 @@
 @media (max-width: 600px) {
   .esebills-catalog {
     margin: 1.5rem auto;
-    padding: 0 .75rem;
+    padding: 0 0.75rem;
   }
 
   .esebills-category {
@@ -399,8 +421,8 @@
 
   .esebills-category-items {
     grid-template-columns: 1fr;
-    gap: .625rem;
-    padding: .625rem;
+    gap: 0.625rem;
+    padding: 0.625rem;
   }
 
   .esebills-product-card {
