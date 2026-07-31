@@ -234,14 +234,12 @@ function esebills_checkout_shortcode($atts) {
                     }
                 } elseif (!empty($result['redirectUrl'])) {
                     $redirect_url = esc_url_raw($result['redirectUrl']);
-                    add_filter('allowed_redirect_hosts', function($hosts) {
-                        $hosts[] = 'pesepay.co.zw';
-                        $hosts[] = 'www.pesepay.co.zw';
-                        $hosts[] = 'pay.pesepay.co.zw';
-                        return array_unique($hosts);
-                    });
-                    wp_safe_redirect($redirect_url);
-                    exit;
+                    $output .= '<noscript><meta http-equiv="refresh" content="0;url=' . esc_attr($redirect_url) . '"></noscript>';
+                    $output .= '<script>window.location.replace(' . wp_json_encode($redirect_url) . ');</script>';
+                    $output .= '<p>' . sprintf(
+                        esc_html__('Redirecting to payment provider... If you are not redirected, %s.', 'esebills-agent-integration'),
+                        '<a href="' . esc_url($redirect_url) . '">' . esc_html__('click here', 'esebills-agent-integration') . '</a>'
+                    ) . '</p>';
                 } else {
                     $output .= '<div class="esebills-notice esebills-warning"><p>' . esc_html__('Transaction submitted, status: ', 'esebills-agent-integration') . esc_html($result['status']) . '</p></div>';
                 }
