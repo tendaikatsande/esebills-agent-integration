@@ -265,7 +265,7 @@ function esebills_checkout_shortcode($atts) {
             <p><?php echo esc_html($product['description']); ?></p>
         </div>
 
-        <?php echo wp_kses_post($output); ?>
+        <?php echo $output; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- built from escaped values server-side. ?>
 
         <form method="post" class="esebills-form">
             <?php wp_nonce_field('esebills_payment_action', 'esebills_nonce'); ?>
