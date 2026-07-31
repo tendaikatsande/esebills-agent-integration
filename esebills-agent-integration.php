@@ -236,6 +236,7 @@ function esebills_checkout_shortcode($atts) {
                     $redirect_url = esc_url_raw($result['redirectUrl']);
                     $output .= '<noscript><meta http-equiv="refresh" content="0;url=' . esc_attr($redirect_url) . '"></noscript>';
                     $output .= '<script>window.location.replace(' . wp_json_encode($redirect_url) . ');</script>';
+                    /* translators: %s: HTML link to the payment provider. */
                     $output .= '<p>' . sprintf(
                         esc_html__('Redirecting to payment provider... If you are not redirected, %s.', 'esebills-agent-integration'),
                         '<a href="' . esc_url($redirect_url) . '">' . esc_html__('click here', 'esebills-agent-integration') . '</a>'
